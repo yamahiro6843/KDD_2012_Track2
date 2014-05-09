@@ -20,19 +20,15 @@ create table testing(
 .import test_full.txt testing
 
 -- インデックスの作成
-create index testingindex on testing(
-  clicks,
-  impressions,
-  display_url,
-  ad_id,
-  advertiser_id,
-  depth,
-  position,
-  query_id,
-  keyword_id,
-  title_id,
-  description_id,
-  user_id
-);
-
-
+create index testing_clicks on testing(clicks);
+create index testing_impressions on testing(impressions);
+create index testing_display_url on testing(display_url);
+create index testing_ad_id on testing(ad_id);
+create index testing_advertiser_id on testing(advertiser_id);
+create index testing_depth on testing(depth);
+create index testing_position on testing(position);
+create index testing_query_id on testing(query_id);
+create index testing_keyword_id on testing(keyword_id);
+create index testing_title_id on testing(title_id);
+create index testing_description_id on testing(description_id);
+create index testing_user_id on testing(user_id);
