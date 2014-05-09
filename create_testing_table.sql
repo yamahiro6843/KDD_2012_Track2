@@ -16,6 +16,9 @@ create table testing(
   indicator text
 );
 
+-- データのインポート
+.import test_full.txt testing
+
 -- インデックスの作成
 create index testingindex on testing(
   clicks,
@@ -32,6 +35,4 @@ create index testingindex on testing(
   user_id
 );
 
--- データのインポート
-.import test_full.txt testing
 

@@ -15,6 +15,9 @@ create table training(
   user_id integer
 );
 
+-- データのインポート
+.import training_with_id.txt training
+
 -- インデックスの作成
 create index trainingindex on training(
   clicks,
@@ -30,7 +33,4 @@ create index trainingindex on training(
   description_id,
   user_id
 );
-
--- データのインポート
-.import training_with_id.txt training
 
