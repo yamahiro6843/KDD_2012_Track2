@@ -18,6 +18,8 @@ create table testing(
 
 -- インデックスの作成
 create index testingindex on testing(
+  clicks,
+  impressions,
   display_url,
   ad_id,
   advertiser_id,

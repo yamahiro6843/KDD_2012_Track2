@@ -17,6 +17,8 @@ create table training(
 
 -- インデックスの作成
 create index trainingindex on training(
+  clicks,
+  impressions,
   display_url,
   ad_id,
   advertiser_id,
