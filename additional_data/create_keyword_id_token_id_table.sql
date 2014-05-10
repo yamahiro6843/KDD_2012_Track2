@@ -1,5 +1,6 @@
 -- テーブル生成
 create table keyword_id_token_id(
+  id integer primary key autoincrement,
   keyword_id integer,
   token_id integer
 );

@@ -1,5 +1,6 @@
 -- テーブル生成
 create table query_id_token_id(
+  id integer primary key autoincrement,
   query_id integer,
   token_id integer
 );

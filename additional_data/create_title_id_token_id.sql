@@ -1,5 +1,6 @@
 -- テーブル生成
 create table title_id_token_id(
+  id integer primary key autoincrement,
   title_id integer,
   token_id integer
 );
