@@ -6,12 +6,17 @@
 
 ## How to use
 
-### 訓練データの整形・インポート
+### TRAINING DATA FILE
 1. `./add_id_to_training.sh`
 2. `sqlite3 track2.sqlite3`
 3. `.read create_training_table.sql`
 
-### テストデータの整形・インポート
+### ADDITIONAL DATA FILES
+1. `mkdir additional_data`
+2. `./split_tokens.sh`
+3. `.read [作成中]`
+
+### TESTING DATASET
 1. `./join_solution.sh`
 2. `sqlite3 track2.sqlite3`
 3. `.read create_testing_table.sql`
@@ -26,5 +31,5 @@
 3. 優勝チーム（National Taiwan University）の論文    
 [A Two-Stage Ensemble of Diverse Models for Advertisement Ranking in KDD Cup 2012](https://kaggle2.blob.core.windows.net/competitions/kddcup2012/2748/media/NTU.pdf)
 
-
-
+## Author
+* [yasaichi](https://github.com/yasaichi)
