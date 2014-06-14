@@ -3,3 +3,4 @@
 *.csv
 *.sqlite3
 *.sqlite3-journal
+sqlite-amalgamation-3080500/
