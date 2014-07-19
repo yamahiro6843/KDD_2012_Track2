@@ -95,8 +95,8 @@ if __name__ == "__main__":
     import matplotlib.pyplot as plt
 
     # データの準備
-    x = np.array([np.repeat(c, 20) + np.random.normal(scale = 0.1, size=20) for c in np.repeat([1,2], 2)]).flatten()
-    y = np.array([np.repeat(c, 20) + np.random.normal(scale = 0.1, size=20) for c in np.tile([1,2], 2)]).flatten()
+    x = np.array([np.random.normal(loc, 0.1, 20) for loc in np.repeat([1,2], 2)]).flatten()
+    y = np.array([np.random.normal(loc, 0.1, 20) for loc in np.tile([1,2], 2)]).flatten()
     X = np.c_[x,y]
 
     # クラスタリングの実行
