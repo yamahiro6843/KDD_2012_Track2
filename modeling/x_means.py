@@ -97,10 +97,9 @@ if __name__ == "__main__":
     # データの準備
     x = np.array([np.random.normal(loc, 0.1, 20) for loc in np.repeat([1,2], 2)]).flatten()
     y = np.array([np.random.normal(loc, 0.1, 20) for loc in np.tile([1,2], 2)]).flatten()
-    X = np.c_[x,y]
 
     # クラスタリングの実行
-    x_means = XMeans(random_state = 1).fit(X) 
+    x_means = XMeans(random_state = 1).fit(np.c_[x,y]) 
     print(x_means.labels_)
     print(x_means.cluster_centers_)
     print(x_means.cluster_log_likelihoods_)
