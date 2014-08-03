@@ -15,7 +15,7 @@ echo "fetch token_ids from track2.sqlite3 ..."
 sqlite3 ../track2.sqlite3 <<EOS
 .header off
 .output ${temp_output}
-${sql}
+${query}
 EOS
 
 # Rubyスクリプトでtoken_idをユニークにする
