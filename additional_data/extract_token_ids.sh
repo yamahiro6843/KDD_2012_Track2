@@ -4,10 +4,10 @@ names=("keyword" "title" "description")
 
 temp_output="token_ids.tmp"
 final_output="token_ids.txt"
-sql=""
+query=""
 
 for name in ${names[@]}; do
-  sql+="SELECT token_id FROM ${name}_id_token_id GROUP BY token_id;"
+  query+="SELECT token_id FROM ${name}_id_token_id GROUP BY token_id;"
 done
 
 # 広告のkeyword, title, descriptionに使われているトークンIDを取得
