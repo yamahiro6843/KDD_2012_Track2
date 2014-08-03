@@ -10,6 +10,7 @@ for name in ${names[@]}; do
   sql+="SELECT token_id FROM ${name}_id_token_id GROUP BY token_id;"
 done
 
+# 広告のkeyword, title, descriptionに使われているトークンIDを取得
 echo "fetch token_ids from track2.sqlite3 ..."
 sqlite3 ../track2.sqlite3 <<EOS
 .header off
@@ -17,7 +18,7 @@ sqlite3 ../track2.sqlite3 <<EOS
 ${sql}
 EOS
 
-Rubyスクリプトでtoken_idをユニークにする
+# Rubyスクリプトでtoken_idをユニークにする
 echo "ruby script start ..."
 irb <<EOS
   input = File.join("`pwd`", "${temp_output}")
@@ -30,6 +31,7 @@ irb <<EOS
   exit
 EOS
 
+# 一時ファイルを削除
 rm "${temp_output}"
 
 
