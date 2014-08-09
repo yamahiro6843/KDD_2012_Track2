@@ -29,7 +29,7 @@
 2. `sqlite3 track2.sqlite3`
 3. `.read create_testing_table.sql`
 
-計`51.6GB`  
+計`54.64GB`  
 不要なインデックスを削除することでこれより小さくすることもできる
 
 ## Modeling
