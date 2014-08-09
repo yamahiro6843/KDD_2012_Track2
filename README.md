@@ -15,16 +15,21 @@
 3. `.read create_training_table.sql`
 
 ### ADDITIONAL DATA FILES
-1. `mkdir additional_data`
-2. `./split_tokens.sh`
+#### データセットをもとにテーブルを作成
+1. `./split_tokens.sh`
+2. `sqlite3 track2.sqlite3`
 3. `.read additional_data/*.sql`
+
+#### 予測のために新たにテーブルを作成・カラムを追加
+1. `python3 additional_data/add_columns_to_training.py`
+2. `python3 additional_data/build_token_id_imp_ctr.py`
 
 ### TESTING DATASET
 1. `./join_solution.sh`
 2. `sqlite3 track2.sqlite3`
 3. `.read create_testing_table.sql`
 
-計 51.6GB    
+計`51.6GB`  
 不要なインデックスを削除することでこれより小さくすることもできる
 
 ## Modeling
