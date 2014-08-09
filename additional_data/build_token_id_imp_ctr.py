@@ -30,6 +30,7 @@ for row in con.execute(query):
             result[token_id]["impressions"] += row["impressions"]
 
 # 結果をcsvとして書き込み
+print("output to csv ...")
 with open("token_id_imp_ctr.csv", "w", newline = "") as file:
     writer = csv.writer(file)
     writer.writerow(["token_id", "clicks", "impressions", "ctr"])  
@@ -41,6 +42,7 @@ with open("token_id_imp_ctr.csv", "w", newline = "") as file:
     result = None
 
 # csvの内容をDBに移行
+print("create table ...")
 query = "CREATE TABLE token_id_imp_ctr ("
 columns = OrderedDict((
     ("id", "integer primary key autoincrement"), 
@@ -60,6 +62,10 @@ with open("token_id_imp_ctr.csv", newline="", encoding="utf-8") as file:
         else:
             query = "INSERT INTO token_id_imp_ctr VALUES (NULL, " + ", ".join(["?"] * (len(columns) - 1)) + ")"
             con.execute(query, line)
+
+# インデックスを作成
+print("create index ...")
+con.execute("CREATE INDEX token_id_imp_ctr_token_id ON token_id_imp_ctr(token_id)")
 
 # 終了
 con.close()
