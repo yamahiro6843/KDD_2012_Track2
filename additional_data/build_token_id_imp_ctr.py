@@ -7,7 +7,7 @@ from collections import OrderedDict
 print(sqlite3.sqlite_version)
 
 # DBに接続
-base_path = "/Users/yasaichi/KDD_2012_Track2/"
+base_path = os.path.join(os.path.abspath(os.path.dirname(__file__)) , "..")
 con = sqlite3.connect(os.path.join(base_path, "track2.sqlite3"), isolation_level = None)
 con.row_factory = sqlite3.Row
 

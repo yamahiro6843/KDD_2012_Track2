@@ -5,7 +5,8 @@ import pandas as pd
 print(sqlite3.sqlite_version)
 
 # DBに接続
-con = sqlite3.connect("/Users/yasaichi/KDD_2012_Track2/track2.sqlite3")
+base_path = os.path.join(os.path.abspath(os.path.dirname(__file__)) , "..")
+con = sqlite3.connect(os.path.join(base_path, "track2.sqlite3"))
 con.row_factory = sqlite3.Row
 
 # age, genderカラムを追加
