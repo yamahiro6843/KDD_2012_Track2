@@ -5,8 +5,8 @@
 このリポジトリには、研究のために書いたコードを随時置いていく予定です。
 
 ## Organization
-* `tables`: 元データからDBを構成するスクリプト
-* `modeling`: DBのデータから予測モデルを構築するスクリプト
+* `tables` 元データからDBを構成するスクリプト
+* `modeling` DBのデータから予測モデルを構築するスクリプト
 
 ## Set up DB
 `sqlite3 tables/track2.sqlite3`
@@ -44,7 +44,7 @@
 2. `sqlite3 tables/track2.sqlite3`
 3. `.read tables/create_testing_table.sql`
 
-実行後、`tables/track2.sqlite3``は`55.07GB`になる。       
+実行後、`tables/track2.sqlite3`は`55.07GB`になる。       
 不要なインデックスを削除することでこれより小さくすることもできる。
 
 ## Modeling
