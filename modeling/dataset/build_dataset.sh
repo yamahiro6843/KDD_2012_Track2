@@ -18,7 +18,7 @@ elif [ $# -eq 3 ]; then
   num=$2
   table=$3
 else
-  echo "usage: ./build_testing.sh [original|extended] n [training|testing] "
+  echo "usage: ./build_dataset.sh [original|extended] n [training|testing] "
   exit 1
 fi
 
