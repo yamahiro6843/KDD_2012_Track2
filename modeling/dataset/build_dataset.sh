@@ -52,22 +52,19 @@ done
 python3 ~/Dropbox/master_thesis/modeling/gradient_boosting/build_response.py ${type} ${num} ${table}
 sort all_${table}_response.csv > all_${table}_response.tmp
 
-# 結合して訓練データとして書き出し
+# 結合してトレーニング/テストデータとして書き出し
 if [ ${table} = "training" ]; then
   prefix="training_"
 fi
 join -t "," all_${table}_response.tmp ${output} > ${prefix}testing.csv
-rm all_${table}_response.*
 
-# 各ファイルを整形
-column_names=`tail -n 1 ${output}`
-gsed -i -e "1i ${column_names}" ${output}
-gsed -i -e '$d' ${output}
+# データセットにヘッダーを追加
 column_names=`tail -n 1 ${prefix}testing.csv`
 gsed -i -e "1i ${column_names}" ${prefix}testing.csv
 gsed -i -e '$d' ${prefix}testing.csv
 
-# 特徴量のみのファイルを削除
+# 不要なファイルを削除
 rm ${output}
+rm all_${table}_response.*
 
 
